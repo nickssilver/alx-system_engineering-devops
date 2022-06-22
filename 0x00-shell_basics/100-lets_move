@@ -1,0 +1,1 @@
+mv [[:upper:]]* /tmp/u
