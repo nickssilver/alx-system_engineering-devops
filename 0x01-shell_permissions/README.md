@@ -1,48 +1,47 @@
-# 0x00. Shell, basics:
-# An introductory project to the Bourne-again Shell.
+# 0x01. Shell, permissions:
 
-# Scrpit Descriptions:
-0-current_working_directory - prints the absolute path name of the current working directory.
+# An introductory project to permissions in BASH.
 
-1-listit - displays the contents list of the current directory.
+# Script Descriptions:
 
-2-bring_me_home - changes the working directory to the user's home directory.
+0-iam_betty - changes your user ID to betty.
 
-3-listfiles - displays the current directory contents in long format.
+1-who_am_i - prints the effective userid of the current user.
 
-4-listmorefiles - displays the current directory contents, including hidden files (starting with .) using the long format.
+2-groups - prints all the groups the current user is part of.
 
-5-listfilesdigitonly - displays the current directory contents, including hidden files, in long format with the user and group IDs displayed numerically.
+3-new_owner - changes the owner of the file hello to the user betty.
 
-6-firstdirectory - creates a directory named holberton in the /tmp/ directory.
+4-empty - creates an empty file called hello.
 
-7-movethatfile - moves the file betty from /tmp/ to /tmp/holberton.
+5-execute - adds execute permission to the owner of the file hello.
 
-8-firstdelete - deletes the file betty in /tmp/holberton.
+6-multiple_permissions - adds execute permission to the owner and the group owner, and read permission to other users, to the file hello.
 
-9-firstdirdeletion - deletes the directory holberton in the /tmp/ directory.
+7-everybody - adds execution permission to the owner, the group owner and the other users, to the file hello.
 
-10-back - changes the working directory to the previous one.
+8-James_Bond - sets the permission to the file hello as follows:
+Owner: no permission at all
+Group: no permission at all
+Other users: all the permissions
 
-11-lists - lists all files, even ones that are normally hidden, in long format that are in the current directory, the parent of the current directory, and the /boot/ directory, in that order.
+9-John_Doe - sets the mode of the file hello to this:
+rwxr-x-wx 1 julien julien 23 Sep 20 14:25 hello
 
-12-file_type - prints the type of the file named iamafile.
+10-mirror_permissions - sets the mode of the file hello the same as olleh’s mode.
 
-13-symbolic_link - creates a symbolic link to /bin/ls named __ls__, which is in the current working directory.
+11-directories_permissions - adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users. Regular files should not be changed.
 
-14-copy_html - copies all the HTML files from the current working directory to the parent of the working directory, but only copies files that did not exist in the parent of the working directory or were newer than the versions in the parent of the working directory.
+12-directory_permissions - creates a directory called dir_holberton with permissions 751 in the working directory.
 
-15-lets_move - moves all files beginning with an uppercase letter to the directory /tmp/u.
+13-change_group - changes the group owner to holberton for the file hello.
 
-16-clean_emacs - deletes all files in the current working directory that end with the character ~.
+14-change_owner_and_group - changes the owner to betty and the group owner to holberton for all the files and directories in the current working directory.
 
-17-tree - creates the directories welcome/, welcome/to/, and welcome/to/holberton/ in the current directory with less than two spaces in the script.
+15-symbolic_link_permissions - changes the owner and the group owner of the file _hello to betty and holberton respectively, where _hello is in the working directory and a symbolic link.
 
-18-commas - lists all the files and directories of the current directory separated by commas with the specifications that:
+16-if_only - changes the owner of the file hello to betty only if it is owned by the user guillaume.
 
-directory namaes should end with a slash
-files and directories starting with a dot should be listed
-the listings should be alpha ordered, except for the directories . and .. which should be listed at the very beginning,
-only digits and letters are used to sort; Digits should come first
-the listing should end with a new line
-holberton.mgc - can be used with the command file to detect Holberton data files, which always contain the string HOLBERTON at offset 0.
+100-Star_Wars - plays Star Wars: Episode IV in the terminal.
+
+101-man_holberton - a man page for the system call holberton.
