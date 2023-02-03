@@ -22,9 +22,9 @@ main() {
   if [ -z "$subdomain" ]; then
     # Display information for all subdomains
     display_subdomain_info "$domain" "www"
-    display_subdomain_info "$domain" "lb-01"
-    display_subdomain_info "$domain" "web-01"
-    display_subdomain_info "$domain" "web-02"
+    display_subdomain_info "$domain" "54.236.236.145"
+    display_subdomain_info "$domain" "100.25.188.89"
+    display_subdomain_info "$domain" "52.91.127.18"
   else
     # Display information for specified subdomain
     display_subdomain_info "$domain" "$subdomain"
