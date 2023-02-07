@@ -1,34 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Usage: ./0-world_wide_web <domain> <subdomain>
+# Display information about subdomains.
 
-display_subdomain_info() {
-  local domain=$1
-  local subdomain=$2
-
-  # Use dig to retrieve DNS record information
-  local dns_record_info=$(dig +short "$subdomain.$domain")
-
-  # Use awk to extract record type and destination
-  local record_type=$(echo "$dns_record_info" | awk '{print "A"}')
-  local destination=$(echo "$dns_record_info" | awk '{print $1}')
-
-  # Display subdomain information
-  echo "The subdomain $subdomain is a $record_type record and points to $destination"
+domain_information () {
+    line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
 }
 
-main() {
-  local domain=$1
-  local subdomain=$2
-
-  if [ -z "$subdomain" ]; then
-    # Display information for all subdomains
-    display_subdomain_info "$domain" "www"
-    display_subdomain_info "$domain" "100.25.188.89"
-    display_subdomain_info "$domain" "52.91.127.18"
-    display_subdomain_info "$domain" "54.236.236.145"
-  else
-    # Display information for specified subdomain
-    display_subdomain_info "$domain" "$subdomain"
-  fi
-}
-
-main "$@"
+if [ "$#" == 1 ]
+then
+  domain_information "$1" "www"
+  domain_information "$1" "lb-01"
+  domain_information "$1" "web-01"
+  domain_information "$1" "web-02"
+elif [ "$#" == 2 ]
+then
+  domain_information "$1" "$2"
+fi
