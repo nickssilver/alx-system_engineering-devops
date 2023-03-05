@@ -1,6 +1,5 @@
 # 0x19-postmortem
 </hr>
-
 ### Duration: 2 hours (12:00 PM - 2:00 PM EST)
 <b>Impact:</B> Users were unable to access the checkout page on our e-commerce website, resulting in a loss of potential sales. Approximately 20% of users were affected.
 
