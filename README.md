@@ -1,5 +1,5 @@
 <div align="center">
-<h1> ALX Software Engineering and DevOps -: </h1>
+<h1> ALX Software Engineering and DevOps -: :thread:</h1>
 </div>
 
 </hr>
